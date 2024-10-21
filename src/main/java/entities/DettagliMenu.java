@@ -9,10 +9,10 @@ import lombok.ToString;
 @Setter
 @ToString
 @AllArgsConstructor
-public abstract class Infomenu {
-    String name;
-    int calories;
-    Double price;
+public abstract class DettagliMenu {
+    protected String name;
+    protected int calories;
+    protected Double price;
 
-public abstract void stampaciboinconsole();
+public abstract void stampaDettaglicibo();
 }

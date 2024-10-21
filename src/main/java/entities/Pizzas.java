@@ -9,26 +9,26 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class Pizzas extends Infomenu {
-    private List<Toppings> toppingsList;
+public class Pizzas extends DettagliMenu {
+    private List<Toppings> toppings;
 
-    public Pizzas(String name, int calories, Double price, List<Toppings> toppingsList) {
+    public Pizzas(String name, int calories, Double price) {
         super(name, calories, price);
-        this.toppingsList = toppingsList;
+        this.toppings = new ArrayList<>();
     }
 
     public void addToppings(Toppings top){ //aggiungo i Topping alla pizza  quando richiamato
-        this.toppingsList.add(top);
+        this.toppings.add(top);
     }
+
     @Override
-    public void stampaciboinconsole() {
+    public void stampaDettaglicibo() {
         System.out.println("La pizza " + getName());
         System.out.println("La pizza " + getCalories());
         System.out.println("La pizza " + getPrice());
         System.out.println("il topping è: ");
-        for (Toppings toppings:toppingsList){
-            System.out.println(". " + toppings.getName());
+        for (Toppings toppings:toppings){
+            System.out.println(" - " + toppings.getName());
         }
-
     }
 }

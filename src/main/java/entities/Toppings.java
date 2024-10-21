@@ -7,7 +7,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Toppings extends Infomenu {
+public class Toppings extends DettagliMenu {
 
 
     public Toppings(String name, int calories, Double price) {
@@ -15,7 +15,8 @@ public class Toppings extends Infomenu {
     }
 
     @Override
-    public void stampaciboinconsole() {
+    public void stampaDettaglicibo() {
+        System.out.println(" I topping sono  ");
         System.out.println("name = " + getName());
         System.out.println("Calories = " + getCalories());
         System.out.println("Price = " + getPrice());

@@ -1,5 +1,6 @@
 package francescabattistini.primalezioneSpring;
 
+import entities.Menu;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -9,10 +10,12 @@ public class PrimalezioneSpringApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PrimalezioneSpringApplication.class, args);
-	}
+
 AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(PrimalezioneSpringApplication.class);// passando questa invece solo della classe con @Configuration ,
 // dico all'app prendi tutte le classi che hanno quest'ultima e non solo quella .
-
-
+Menu menu = ctx.getBean(Menu.class);
+ menu.stampaMenu();
+ ctx.close();
+}
 
 }
